@@ -25,6 +25,7 @@ func main() {
 
 	api := router.Group("/api/v1")
 	api.POST("/users", userHandler.RegisterUser)
+	api.POST("/sessions", userHandler.LoginUser)
 
 	if err := router.Run(":8081"); err != nil {
 		log.Println(err)
